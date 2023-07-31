@@ -23,7 +23,7 @@ class UserService{
         where:whereOpt,
         
       })
-console.log(res.dataValues)
+// console.log(res.dataValues)
       return res ? res.dataValues :null
     }
 }
