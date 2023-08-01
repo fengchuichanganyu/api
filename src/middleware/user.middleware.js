@@ -74,7 +74,7 @@ const verifyUser = async (ctx,next) =>{
     }
 
     //2.判断密码是否匹配（不匹配：报错）
-    if(!bcrypt.compareSync(password,res.password)){
+    if(!bcrypt.compare(password,res.password)){
       console.log(res.password,"asdsadsa",password)
       ctx.app.emit('error',invalidPassword,ctx)
       return
