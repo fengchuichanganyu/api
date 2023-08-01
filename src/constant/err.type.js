@@ -14,5 +14,22 @@ module.exports = {
         message: '用户注册失败',
         result: '',
       },
+      userDoesNotExist:{
+        code:'10004',
+        message:'用户名不存在',
+        result:'',
+      },
+      userLoginError:{
+        code:'10005',
+        message:'用户登陆失败',
+        result:'',
+
+      },
+      invalidPassword:{
+        code:'10006',
+        message:'无效密码',
+        result:'',
+      },
+      
 
 }
