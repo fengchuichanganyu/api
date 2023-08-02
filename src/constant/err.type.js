@@ -30,6 +30,15 @@ module.exports = {
         message:'无效密码',
         result:'',
       },
-      
+      tokenExpiredError:{
+        code:'10101',
+        message:'token已过期',
+        result:'',
+      },
+      invalidToken:{
+        code:'10102',
+        messagae:'无效的token',
+        result:'',
+      }
 
 }

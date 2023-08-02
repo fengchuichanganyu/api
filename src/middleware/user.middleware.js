@@ -2,6 +2,8 @@ const bcrypt = require('bcryptjs')
 
 const {getUserInfo} = require('../service/user.service')
 
+
+
 const {userAlreadyExisted,
   userFormateError,
   userRegisterError,
