@@ -27,7 +27,7 @@ module.exports = {
       },
       invalidPassword:{
         code:'10006',
-        message:'无效密码',
+        message:'密码不匹配',
         result:'',
       },
       tokenExpiredError:{
@@ -38,6 +38,11 @@ module.exports = {
       invalidToken:{
         code:'10102',
         messagae:'无效的token',
+        result:'',
+      },
+      changePasswordError:{
+        code:'10007',
+        message:'修改密码错误',
         result:'',
       }
 

@@ -8,7 +8,7 @@ const  {tokenExpiredError,
 const auth =  async (ctx,next)=>{
     const { authorization} = ctx.request.header
     const token = authorization.replace('Bearer ','')
-    console.log(token)
+    // console.log(token)
     try{
         //user中包含playload的信息（id，user_name,is_admin）
         // console.log(JWT_SECRET)

@@ -75,16 +75,16 @@ const verifyUser = async (ctx,next) =>{
       return
     }
 
-    //2.判断密码是否匹配（不匹配：报错）
-    if(!bcrypt.compare(password,res.password)){
-      console.log(res.password,"asdsadsa",password)
-      ctx.app.emit('error',invalidPassword,ctx)
-      return
-    }
-    
-   
+console.log(password,res.password)
 
-    }catch(err){
+    //2.判断密码是否匹配（不匹配：报错）
+    if(!bcrypt.compareSync(password,res.password)){
+      console.log(res.password,"asdsadsa",password)
+       ctx.app.emit('error',invalidPassword,ctx)
+       return
+ 
+    }
+  }catch(err){
       console.error(err)
      return ctx.app.emit('error',userLoginError,ctx)
 
