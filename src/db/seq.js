@@ -10,6 +10,7 @@ MYSQL_DB} = require('../config/config.default')
 const seq = new Sequelize(MYSQL_DB,MYSQL_USER,MYSQL_PWD,{
     host:MYSQL_HOST,
     dialect:'mysql',
+    charset: 'utf8mb4',
 })
  
 // seq.authenticate().then(()=>{
