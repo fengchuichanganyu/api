@@ -37,13 +37,24 @@ module.exports = {
       },
       invalidToken:{
         code:'10102',
-        messagae:'无效的token',
+        message:'无效的token',
         result:'',
       },
       changePasswordError:{
         code:'10007',
         message:'修改密码错误',
         result:'',
-      }
+      },
+      hasNotAdminPermission:{
+        code:'10103',
+        message:'没有管理员权限',
+        result:''
+      },
+      fileUploadError:{
+        code:'10201',
+        message:'商品图片上传失败',
+        result:'',
+      },
+
 
 }
