@@ -7,10 +7,10 @@ class GoodsController{
         // console.log(ctx.request.files.file)
         const {file} = ctx.request.files
 
-        const fileTypes = ['image/jpg','image/png']
+        const fileTypes = ['image/jpeg','image/png']
         // console.log(file)
         if(file){
-            if(!fileTypes.includes(file.type)){
+            if(!fileTypes.includes(file.mimetype)){
                 return ctx.app.emit('error',unSupportedFileType,ctx)
             }
             ctx.body = {
