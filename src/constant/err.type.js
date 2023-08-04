@@ -55,6 +55,11 @@ module.exports = {
         message:'商品图片上传失败',
         result:'',
       },
+      unSupportedFileType:{
+        code:'10202',
+        message:'不支持的文件格式',
+        result:'',
+      }
 
 
 }
