@@ -70,6 +70,11 @@ module.exports = {
         message:'发布商品失败',
         result:'',
       },
+      invalidGoodsId:{
+        code:'10205',
+        message:'无效的商品id',
+        result:''
+      }
 
 
 }
