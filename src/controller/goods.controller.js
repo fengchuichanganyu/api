@@ -1,8 +1,18 @@
 const path = require('path')
 
-const {fileUploadError,unSupportedFileType,publishGoodsError,invalidGoodsId} = require('../constant/err.type')
+const {fileUploadError,
+    unSupportedFileType,
+    publishGoodsError,
+    invalidGoodsId,
+} = require('../constant/err.type')
 
-const {createGoods,updateGoods,removeGoods,restoreGoods} = require('../service/goods.service')
+const {createGoods,
+    updateGoods,
+    removeGoods,
+    restoreGoods,
+    findGoods,
+
+} = require('../service/goods.service')
 
 class GoodsController{
     async upload(ctx,next){
@@ -89,6 +99,15 @@ class GoodsController{
           }else{
             return ctx.app.emit('error',invalidGoodsId,ctx)
           }
+    }
+
+    async findAll(ctx) {
+        //1.解析pagenum和pageSize
+    const { pageNum = 1, pageSize = 10} = ctx.request.query
+        //2.调用数据处理的相关方法
+    const res =  await findGoods(pageNum, pageSize)
+        //3.返回结果
+        ctx.body =res
     }
 }
 

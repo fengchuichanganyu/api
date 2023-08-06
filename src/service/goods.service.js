@@ -24,6 +24,25 @@ class GoodsService{
 
     }
 
+    async findGoods(pageNum , pageSize){
+//         //1.获取总数
+//         const count = await Goods.count()
+//         // console.log(count)
+//         //2.获取分页数据
+//     const offset = (pageNum -1) *pageSize
+//     const rows =  await Goods.findAll({ offset: offset, limit: pageSize * 1 })
+// console.log(rows)\
+const offset = (pageNum -1) *pageSize
+const {count , rows } = await Goods.findAndCountAll({ offset: offset, limit: pageSize * 1})
+
+return {
+        pageNum,
+        pageSize,
+        total:count,
+        list:rows,
+     }
+    }
+
 
 }
 module.exports = new GoodsService()
