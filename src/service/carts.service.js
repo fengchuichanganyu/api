@@ -70,5 +70,20 @@ class CartService{
         })
 
     }
+
+    async selectOrUnSelectAllCarts(user_id,opt){
+        await Cart.findOne({
+            attributes:['selected'],
+            where:{user_id}
+        })
+       return await Cart.update(
+        { selected : opt },
+        {
+            where:{
+                user_id,
+            },
+        }
+        )
+    }
 }
 module.exports = new CartService()

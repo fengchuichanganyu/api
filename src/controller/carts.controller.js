@@ -2,6 +2,7 @@ const {createdOrUpdate,
     findCarts,
     updateCarts,
     removeCarts,
+    selectOrUnSelectAllCarts,
 } = require('../service/carts.service')
 
 const {cartFormatError,} = require('../constant/err.type')
@@ -75,6 +76,20 @@ class CartController{
                 result:res,
             }
         }    
+    }
+
+    async selectOrUnSelectAll(ctx){
+        const user_id = ctx.state.user.id
+        const {opt} = ctx.request.body
+        console.log(opt)
+        const res = await selectOrUnSelectAllCarts(user_id,opt)
+        // console.log(res)
+        ctx.body = {
+            code:0,
+            message:'商品全部更改为选中或不选中',
+            result:res,
+        }
+
     }
 }
 

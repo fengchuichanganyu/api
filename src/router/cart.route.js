@@ -9,6 +9,7 @@ const {add ,
     findAll ,
     update,
     remove,
+    selectOrUnSelectAll,
 } = require('../controller/carts.controller')
 
 const router  = new Router({ prefix:'/carts'})
@@ -23,5 +24,7 @@ router.patch('/:id',auth,validator({
 }),update)
 
 router.delete('/',auth,validator({ids:'array'}),remove)
+
+router.post('/selectAll',auth,selectOrUnSelectAll)
 
 module.exports = router
