@@ -3,10 +3,17 @@ const Router = require('koa-router')
 const { auth} = require('../middleware/auth.middleware')
 const {validator,goods_validator} = require('../middleware/cart.middleware')
 
-const {add} = require('../controller/carts.controller')
+const {add ,findAll ,update} = require('../controller/carts.controller')
 
 const router  = new Router({ prefix:'/carts'})
 
-router.post('/',auth,validator,goods_validator,add)
+router.post('/',auth,validator({goods_id:'number'}),goods_validator,add)
+
+router.get('/',auth,findAll)
+
+router.patch('/:id',auth,validator({
+    number:{type:'number',required:false},
+    selected:{type:'bool',required:false},    
+}),update)
 
 module.exports = router
