@@ -1,5 +1,5 @@
 const Router = require('koa-router')
-
+const router = new Router({prefix:'/goods'})
 
 const {auth,hadAdminPermission} = require('../middleware/auth.middleware')
 const {validator} = require('../middleware/goods.middleware')
@@ -12,7 +12,7 @@ const {upload,
     findAll,
 } = require('../controller/goods.controller')
 
-const router = new Router({prefix:'/goods'})
+
 
  //商品图片上传接口
 router.post('/upload',auth,hadAdminPermission,upload)

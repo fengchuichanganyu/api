@@ -81,8 +81,13 @@ module.exports = {
         result:'',
       },
       addrFormatError:{
-        code:'10301',
+        code:'10401',
         message:'地址数据格式错误',
+        result:'',
+      },
+      orderFormatError:{
+        code:'10501',
+        message:'订单数据格式错误',
         result:'',
       },
 
